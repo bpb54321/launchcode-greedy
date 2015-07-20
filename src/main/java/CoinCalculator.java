@@ -50,8 +50,6 @@ public class CoinCalculator {
         String currentInputString;
         String currentOutputString;
 
-
-
         programLoop:
         while (true) {
             System.out.println("Please enter the amount of change you wish to provide, using a dollar sign and " +

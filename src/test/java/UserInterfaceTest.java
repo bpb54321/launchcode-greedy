@@ -12,18 +12,6 @@ import static org.junit.Assert.assertEquals;
 public class UserInterfaceTest {
 
     @Test
-    public void testPrinting() throws IOException {
-        CoinCalculator coinCalculator = new CoinCalculator();
-
-
-
-        try (FileInputStream inputStream = new FileInputStream("Sample_Input.txt");) {
-
-            System.setIn(inputStream);
-            coinCalculator.userInterface();
-        }
-    }
-    @Test
     public void checkFirstLine() throws FileNotFoundException {
         File sampleInputFile=new File("Sample_Input.txt");
         try (Scanner theScanner= new Scanner(sampleInputFile)) {
