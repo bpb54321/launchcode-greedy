@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 /**
  * User: Brian Blosser
  * Date: 7/19/15
@@ -38,6 +40,36 @@ public class CoinCalculator {
         }
 
         return coinMessage;
-        
+    }
+
+    public void userInterface() {
+        System.out.println("Welcome to the Greedy program. This program specifies how to provide coin change using the" +
+                "fewest number of coins possible. Type 'q' and Enter to exit the program at any time.");
+
+        Scanner inputScanner = new Scanner(System.in);
+        String currentInputString;
+        String currentOutputString;
+
+
+
+        programLoop:
+        while (true) {
+            System.out.println("Please enter the amount of change you wish to provide, using a dollar sign and " +
+                    "decimal point, for example $3.33.");
+
+            currentInputString= inputScanner.nextLine();
+
+            if (currentInputString.equals("q")) {
+                break programLoop;//out of whole program
+            } else {
+                //Do coin calculation.
+                currentOutputString=this.calculateChange(currentInputString);
+                System.out.println("Please provide the customer the following change: " + currentOutputString);
+            }
+
+
+        }
+
+
     }
 }

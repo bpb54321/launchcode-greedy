@@ -7,11 +7,15 @@ public class Greedy {
 
 
     public static void main(String[] varArgs) {
-        if (varArgs.length > 1) {
+
+        CoinCalculator coinCalculator = new CoinCalculator();
+        coinCalculator.userInterface();
+
+        /*if (varArgs.length > 1) {
             CoinCalculator coinCalculator = new CoinCalculator();
             coinCalculator.calculateChange(varArgs[0]);
         }
-        throw new IllegalArgumentException("No value given");
+        throw new IllegalArgumentException("No value given");*/
     }
 
 }
