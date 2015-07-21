@@ -11,6 +11,18 @@ import static org.junit.Assert.assertEquals;
  */
 public class UserInterfaceTest {
 
+
+    @Test
+    public void checkFirstLineOfExpectedOutput() throws FileNotFoundException {
+        CoinCalculator coinCalculator = new CoinCalculator();
+        File sampleOutputFile=new File("Sample_Output.txt");
+        try (Scanner theScanner = new Scanner(sampleOutputFile)) {
+            String firstLine = theScanner.nextLine();
+
+            assertEquals(coinCalculator.WELCOME_MESSAGE,firstLine);
+        }
+
+    }
     @Test
     public void checkFirstLine() throws FileNotFoundException {
         File sampleInputFile=new File("Sample_Input.txt");

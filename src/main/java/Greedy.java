@@ -8,8 +8,8 @@ public class Greedy {
 
     public static void main(String[] varArgs) {
 
-        CoinCalculator coinCalculator = new CoinCalculator();
-        coinCalculator.userInterface();
+        //CoinCalculator coinCalculator = new CoinCalculator();
+        //coinCalculator.userInterface();
 
 
     }

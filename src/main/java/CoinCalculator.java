@@ -6,6 +6,8 @@ import java.util.Scanner;
  * Time: 8:31 pm
  */
 public class CoinCalculator {
+    public String WELCOME_MESSAGE="Welcome to the Greedy program. This program specifies how to provide coin change using the " +
+            "fewest number of coins possible. Type 'q' and Enter to exit the program at any time.";
 
 
     public String calculateChange(String amountOfChange) {
@@ -42,12 +44,9 @@ public class CoinCalculator {
         return coinMessage;
     }
 
-    public void userInterface() {
-        System.out.println("Welcome to the Greedy program. This program specifies how to provide coin change using the" +
-                "fewest number of coins possible. Type 'q' and Enter to exit the program at any time.");
+    public String userInterface(String currentInputString) {
+        System.out.println(this.WELCOME_MESSAGE);
 
-        Scanner inputScanner = new Scanner(System.in);
-        String currentInputString;
         String currentOutputString;
 
         programLoop:
@@ -55,14 +54,13 @@ public class CoinCalculator {
             System.out.println("Please enter the amount of change you wish to provide, using a dollar sign and " +
                     "decimal point, for example $3.33.");
 
-            currentInputString= inputScanner.nextLine();
-
             if (currentInputString.equals("q")) {
-                break programLoop;//out of whole program
+                return "You have quit the program, goodbye!";
             } else {
                 //Do coin calculation.
                 currentOutputString=this.calculateChange(currentInputString);
-                System.out.println("Please provide the customer the following change: " + currentOutputString);
+                currentOutputString="Please provide the customer the following change: " + currentOutputString;
+                return currentOutputString;
             }
 
 

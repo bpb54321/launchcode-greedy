@@ -1,0 +1,1 @@
+Welcome to the Greedy program. This program specifies how to provide coin change using the fewest number of coins possible. Type 'q' and Enter to exit the program at any time.
