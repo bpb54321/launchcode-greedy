@@ -12,9 +12,33 @@ public class CoinCalculator {
             "fewest number of coins possible. Type 'q' and Enter to exit the program at any time.";
     public String PROMPT_MESSAGE = "Please enter the amount of change you wish to provide, using a " +
             "decimal point, for example $3.33.";
+    public String INVALID_INPUT_MESSAGE = "Invalid input!";
 
     public static void main(String[] args) {
-        //This will be the main method.
+
+        CoinCalculator coinCalculator = new CoinCalculator();
+        String inputString,outputString;
+
+        try(Scanner inputScanner = new Scanner(System.in)) {
+
+            System.out.println(coinCalculator.userInterface("welcome"));
+
+            programLoop:
+            while (true) {
+                outputString = coinCalculator.userInterface("prompt");
+                System.out.println(outputString);
+
+                inputString = inputScanner.nextLine();
+                outputString = coinCalculator.userInterface(inputString);
+                System.out.println(outputString);
+
+                if (inputString.equals("q")) {
+                    break programLoop;
+                }
+            }
+        }
+
+
     }
 
 
@@ -67,13 +91,15 @@ public class CoinCalculator {
                 currentOutputString = this.QUIT_MESSAGE;
                 return currentOutputString;
             default:
-                currentOutputString = this.calculateChange(currentInputString);
-                currentOutputString = CHANGE_MESSAGE + currentOutputString;
+                if (!verifyInput(currentInputString)) {
+                    currentOutputString = this.INVALID_INPUT_MESSAGE;
+                } else {
+                    currentOutputString = this.calculateChange(currentInputString);
+                    currentOutputString = this.CHANGE_MESSAGE + currentOutputString;
+                }
                 return currentOutputString;
         }
     }
-
-
 
     public boolean verifyInput(String input) {
 

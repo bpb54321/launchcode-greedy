@@ -1,3 +1,3 @@
-Reading display.
-Reading display.
+welcome
+prompt
 $3.33
